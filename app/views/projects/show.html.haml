@@ -1,17 +1,14 @@
 %p#notice= notice
 
-%p
-	%strong Title:
-	= @project.title
-
-%p
-	%strong Description:
-	= @project.description
+%h2.todo_list_title= @project.title
+%p.todo_list_sub_title= @project.description
 
 #todo_items_wrapper
 	= render @project.tasks
 	#form
 		= render 'tasks/form'
 
-= link_to 'Edit', edit_project_path(@project)
-= link_to 'Back', projects_path
+.links
+	= link_to 'Edit', edit_project_path(@project)
+	= link_to 'Back', projects_path
+	= link_to 'Delete', @project, method: :delete, data: { confirm: 'Are you sure?' }

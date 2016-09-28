@@ -1,6 +1,10 @@
-.row.clearix
+.row.clearfix
 	.complete
-		= link_to 'Mark as Complete', complete_project_task_path(task.project, task), method: :patch
+		= link_to complete_project_task_path(task.project, task), method: :patch do
+			- if task.completed?
+				= icon('check', style: 'opacity:0.4')
+			- else
+				= icon('check')
 	.todo_item
 		- if task.completed?
 			%p{ style: 'opacity: 0.4' }
@@ -8,4 +12,4 @@
 		- else
 			%p= task.content
 	.trash
-		= link_to 'Delete', project_task_path(task.project, task), method: :delete, data: { confirm: 'Are you sure?' }
+		= link_to icon('trash'), project_task_path(task.project, task), method: :delete, data: { confirm: 'Are you sure?' }

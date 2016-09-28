@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml', '~> 4.0', '>= 4.0.7'
+gem 'font-awesome-sass', '~> 4.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
