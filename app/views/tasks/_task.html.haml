@@ -1,2 +1,11 @@
-%p= task.content
-= link_to 'Delete', project_task_path(task.project_id, task), method: :delete, data: { confirm: 'Are you sure?' }
+.row.clearix
+	.complete
+		= link_to 'Mark as Complete', complete_project_task_path(task.project, task), method: :patch
+	.todo_item
+		- if task.completed?
+			%p{ style: 'opacity: 0.4' }
+				%strike= task.content
+		- else
+			%p= task.content
+	.trash
+		= link_to 'Delete', project_task_path(task.project, task), method: :delete, data: { confirm: 'Are you sure?' }
