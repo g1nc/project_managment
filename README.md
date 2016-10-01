@@ -1,3 +1,3 @@
 # README
 
-Training app with Ruby on Rails. Something like [TaskRabbit](http://taskrabbit.com), but simpler
+Training app with Ruby on Rails. Something for Project managing with different Tasks
